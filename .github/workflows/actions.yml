@@ -10,7 +10,7 @@ jobs:
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@v1
-          with:
-            who-to-greet: 'metin the Octocat'
-        - name: Log Greeting Time
-          run: echo "${{ steps.greet.outputs.time }}"  # stepe reference verdik
+        with:
+          who-to-greet: 'metin the Octocat'
+      - name: Log Greeting Time
+        run: echo "${{ steps.greet.outputs.time }}"  # stepe reference verdik
