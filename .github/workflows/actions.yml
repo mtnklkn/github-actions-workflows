@@ -1,9 +1,28 @@
 name: Actions Workflow
 
-on: 
-  push: 
-  pull_request:
-    types: [closed, assigned, opened, reopened] 
+on:
+  push:
+    branches:
+      - master
+      - "feature/*"   #mathes feature/feature
+      - "feature/**"
+      - "!feature/featC"
+    tags:
+      - v1.*
+      paths:
+        - "**.js"
+        - "!filename.js"
+      paths-ignore:
+        - 'docs/**'
+  #  branches-ignore: we cant use at the same time
+  #    - null
+  #repository_dispatch:
+  #  types: [build]
+  #schedule:
+  #  - cron: "* * * * *"
+  # push: 
+  #pull_request:
+  #  types: [closed, assigned, opened, reopened] 
 
 jobs:
 
